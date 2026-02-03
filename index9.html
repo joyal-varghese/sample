@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h3>Type: <span id="w">hello</span></h3>
+<input oninput="chk(this.value)">
+<p id="r"></p>
+<script>
+let s=Date.now();
+function chk(v){
+ if(v=="hello")
+ r.innerText="Time: "+((Date.now()-s)/1000)+" sec";
+}
+</script>
+</body>
+</html>
