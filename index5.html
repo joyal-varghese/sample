@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid{display:grid;grid-template-columns:repeat(4,80px);gap:10px}
+.card{height:80px;background:#444;color:#fff;font-size:30px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+</style>
+</head>
+<body>
+<div class="grid" id="g"></div>
+<script>
+let a=[1,1,2,2,3,3,4,4].sort(()=>0.5-Math.random()),f=[],l=[];
+a.forEach((v,i)=>{
+ let d=document.createElement("div");d.className="card";d.onclick=()=>{
+  if(l.length<2&&!l.includes(d)){d.innerText=v;l.push(d);f.push(v)}
+  if(l.length==2)setTimeout(()=>{
+   if(f[0]!=f[1])l.forEach(c=>c.innerText="");
+   l=[];f=[];
+  },600)
+ }
+ g.appendChild(d)
+})
+</script>
+</body>
+</html>
