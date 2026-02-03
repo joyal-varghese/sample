@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.grid{display:grid;grid-template-columns:repeat(3,100px);margin:auto}
+div{border:1px solid;font-size:40px;height:100px;text-align:center;cursor:pointer}
+</style>
+</head>
+<body>
+<h2 align="center">Tic Tac Toe</h2>
+<div class="grid">
+<script>
+let b=Array(9).fill("");
+function c(i){
+ if(b[i])return;
+ b[i]="X";draw();
+ let e=b.map((v,i)=>v==""?i:null).filter(v=>v!=null);
+ if(e.length)b[e[Math.floor(Math.random()*e.length)]]="O";
+ draw();
+}
+function draw(){
+ document.querySelector(".grid").innerHTML="";
+ b.forEach((v,i)=>{
+  let d=document.createElement("div");
+  d.innerText=v; d.onclick=()=>c(i);
+  document.querySelector(".grid").appendChild(d);
+ });
+}
+draw();
+</script>
+</div>
+</body>
+</html>
