@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.box{display:grid;grid-template-columns:repeat(3,100px)}
+div{height:100px;border:1px solid}
+.active{background:brown}
+</style>
+</head>
+<body>
+<div class="box" id="b"></div>
+<script>
+for(let i=0;i<9;i++){let d=document.createElement("div");d.onclick=()=>d.classList.contains("active")&&score++;b.appendChild(d)}
+let score=0;
+setInterval(()=>{
+ [...b.children].forEach(d=>d.className="");
+ b.children[Math.random()*9|0].className="active";
+},800);
+</script>
+</body>
+</html>
