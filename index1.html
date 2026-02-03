@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body{font-family:Arial;text-align:center;background:#111;color:#fff}
+input,button{padding:10px;margin:5px}
+</style>
+</head>
+<body>
+<h2>Guess the Number (1–100)</h2>
+<input id="guess" type="number">
+<button onclick="check()">Check</button>
+<p id="msg"></p>
+
+<script>
+let num=Math.floor(Math.random()*100)+1;
+function check(){
+ let g=document.getElementById("guess").value;
+ document.getElementById("msg").innerText=
+ g==num?"🎉 Correct!":g>num?"Too High":"Too Low";
+}
+</script>
+</body>
+</html>
